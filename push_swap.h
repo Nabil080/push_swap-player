@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/10 17:20:40 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/10 17:28:42 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,10 @@
 # define PUSH_SWAP_H
 
 # include "libft.h"
+
+/*
+* parsing	
+*/
+int	parsing(int argc, char **argv);
 
 #endif

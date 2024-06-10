@@ -1,20 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 17:19:49 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/10 17:40:56 by nbellila         ###   ########.fr       */
+/*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/10 17:41:15 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int main(int argc, char *argv[])
+int	parsing(int argc, char **argv)
 {
-	if (!parsing(argc, argv))
-		return (1);
-	return 0;
+	if (argc)
+		ft_printf("error\n");
+	argv++;
+	return (0);
 }

@@ -14,6 +14,13 @@
 # define LIBFT_H
 
 /*
+*	BASES
+*/
+# define DECIMAL "0123456789"
+# define HEXA "0123456789abcdef"
+# define HEXA_UP "0123456789ABCDEF"
+
+/*
 *	INT_MAX / SIZE_MAX
 */
 # include <limits.h>
@@ -23,6 +30,10 @@
 */
 # include <unistd.h>
 # include <stdlib.h>
+/*
+* va_arg
+*/
+# include <stdarg.h>
 /*
 *	is_check
 */
@@ -102,6 +113,8 @@ int		ft_memcmp(const void *s1, const void *s2, size_t n);
 /*
 *	printers / putters
 */
+int		ft_printf(const char *str, ...);
+
 int		ft_putchar_fd(char c, int fd);
 
 int		ft_putstr_fd(const char *s, int fd);

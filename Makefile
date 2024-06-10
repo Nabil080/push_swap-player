@@ -1,6 +1,8 @@
 NAME = push_swap
 
+
 SRCS =	main.c \
+		parsing.c \
 
 HEADER = push_swap.h
 
@@ -30,7 +32,7 @@ norm :
 	norminette -R CheckForbiddenSourceHeader ${SRCS}
 	norminette -R CheckDefine ${HEADER}
 
-test : re
+test : all
 	valgrind ./${NAME}
 
 re : fclean all
