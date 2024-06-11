@@ -6,27 +6,30 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/11 13:52:10 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/11 14:23:05 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	ft_itoa_check(const char *str)
+static int	ft_atoi_check(const char *str)
 {
 	size_t	i;
+	long	result;
 
 	i = 0;
-	while (ft_isspace(str[i]))
+	if (str[i] == '-' || str[i] == '+')
 		i++;
-	if (str[i] == '+' || str[i] == '-')
-		i++;
-	if (!str[i])
-		return (0);
+	result = 0;
 	while (str[i])
 	{
 		if (!ft_isdigit(str[i]))
 			return (0);
+		result = result * 10 + (str[i] - '0');
+		if (result > INT_MAX && str[0] != '-')
+			return (0);
+		if (result > (long)INT_MAX + 1 && str[0] == '-')
+			return (0);	
 		i++;
 	}
 	return (1);
@@ -41,7 +44,7 @@ int	args_check(size_t argc, char **argv)
 	i = 1;
 	while (i < argc)
 	{
-		if (!ft_itoa_check(argv[i]))
+		if (!ft_atoi_check(argv[i]))
 			return (ft_printf("Error\n") - 6);
 		i++;
 	}
