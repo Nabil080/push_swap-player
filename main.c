@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:19:49 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/10 17:40:56 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:20:48 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 int main(int argc, char *argv[])
 {
-	if (!parsing(argc, argv))
+	//t_list	*a;
+	//t_list	*b;
+	if (!args_check(argc, argv))
 		return (1);
-	return 0;
+	// parse a
+	return (0);
 }

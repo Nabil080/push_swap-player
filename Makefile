@@ -33,6 +33,9 @@ norm :
 	norminette -R CheckDefine ${HEADER}
 
 test : all
-	valgrind ./${NAME}
+	./${NAME} 2 1 3 6 5 8
+
+error : all
+	./${NAME} -2 1 +3 16 5a 8b
 
 re : fclean all
