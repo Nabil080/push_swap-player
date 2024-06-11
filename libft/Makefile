@@ -52,7 +52,7 @@ HEADER = libft.h
 
 FLAGS = -Wall -Wextra -Werror
 
-all: ${NAME}
+all: ${NAME} bonus
 
 ${NAME}: ${SRCS:.c=.o}
 	ar -rc ${NAME} ${SRCS:.c=.o}
