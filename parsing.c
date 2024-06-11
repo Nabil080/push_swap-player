@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/11 13:43:56 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/11 13:52:10 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,14 +60,12 @@ t_list	*parse_as_lst(size_t argc, char **argv)
 	{
 		content = malloc(sizeof(int));
 		if (!content)
-		{
-			ft_lstclear(&lst, NULL);
-			return (NULL);
-		}
+			return (ft_lstclear(&lst, NULL));
 		*content = ft_atoi(argv[argc - 1]);
 		new = ft_lstnew(content);
 		if (!new)
 		{
+			free(content);
 			ft_lstclear(&lst, NULL);
 			return (NULL);
 		}
