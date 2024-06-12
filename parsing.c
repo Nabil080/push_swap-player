@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/11 14:23:05 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:25:25 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ static int	ft_atoi_check(const char *str)
 int	args_check(size_t argc, char **argv)
 {
 	size_t	i;
+	size_t	j;
 	
 	if (argc < 2)
 		return (0);
@@ -46,6 +47,13 @@ int	args_check(size_t argc, char **argv)
 	{
 		if (!ft_atoi_check(argv[i]))
 			return (ft_printf("Error\n") - 6);
+		j = 1;
+		while (i + j < argc)
+		{
+			if (ft_atoi(argv[i]) == ft_atoi(argv[i + j]))
+				return (ft_printf("Error\n") - 6);
+			j++;
+		}
 		i++;
 	}
 	// creer une liste avec chaque int
