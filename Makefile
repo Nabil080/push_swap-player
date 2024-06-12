@@ -3,12 +3,13 @@ NAME = push_swap
 
 SRCS =	main.c \
 		parsing.c \
+		inputs.c \
 		outputs.c \
 		operations.c \
 
 HEADER = push_swap.h
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g
 
 LIBFT = libft
 
