@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:45:08 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:00:09 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static void	show_options(char *buffer)
 	ft_printf("7 : ra (rotate a)\n");
 	ft_printf("8 : rb (rotate b)\n");
 	ft_printf("9 : rr (rotate a & b)\n");
+	ft_printf("a : rra (reverse rotate a)\n");
+	ft_printf("b : rrb (reverse rotate b)\n");
 	read(0, buffer, 1);
 }
 
@@ -53,5 +55,9 @@ void	get_user_input(t_list **a, t_list **b)
 		rb(a, b);
 	if (buffer == '9')
 		rr(a, b);
+	if (buffer == 'a')
+		rra(a, b);
+	if (buffer == 'b')
+		rrb(a, b);
 	get_user_input(a, b);
 }

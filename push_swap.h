@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:45:45 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:02:29 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,5 +58,13 @@ void	ra(t_list **a, t_list **b);
 void	rb(t_list **a, t_list **b);
 
 void	rr(t_list **a, t_list **b);
+
+void	reverse_rotate(t_list **stack);
+
+void	rra(t_list **a, t_list **b);
+
+void	rrb(t_list **a, t_list **b);
+
+void	rrr(t_list **a, t_list **b);
 
 #endif

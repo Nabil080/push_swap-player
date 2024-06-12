@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:53:27 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:02:49 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,30 @@ void	rotate(t_list **stack)
 {
 	t_list	*last;
 
-	if (!*stack)
+	if (ft_lstsize(*stack) < 2)
 		return ;
 	last = ft_lstlast(*stack);
 	ft_lstlast_offset(*stack, 1)->next = NULL;
 	last->next = *stack;
 	*stack = last;
+}
+
+void	reverse_rotate(t_list **stack)
+{
+	t_list	*second;
+
+	if (ft_lstsize(*stack) < 2)
+		return ;
+	second = (*stack)->next;
+	ft_lstlast(*stack)->next = *stack;
+	(*stack)->next = NULL;
+	*stack = second;
+}
+
+void	rrr(t_list **a, t_list **b)
+{
+	reverse_rotate(a);
+	reverse_rotate(b);
+	ft_printf("Operation done : rrr\n");
+	show_stacks(a, b);
 }

@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 18:32:52 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:47:09 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:02:41 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,19 @@ void	rr(t_list **a, t_list **b)
 	rotate(a);
 	rotate(b);
 	ft_printf("Operation done : rr\n");
+	show_stacks(a, b);
+}
+
+void	rra(t_list **a, t_list **b)
+{
+	reverse_rotate(a);
+	ft_printf("Operation done : ra\n");
+	show_stacks(a, b);
+}
+
+void	rrb(t_list **a, t_list **b)
+{
+	reverse_rotate(b);
+	ft_printf("Operation done : rb\n");
 	show_stacks(a, b);
 }
