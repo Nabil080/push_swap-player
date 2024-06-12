@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 17:17:06 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:15:46 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ t_list	*parse_as_lst(size_t argc, char **argv);
 /*
 * inputs
 */
-void	get_user_input(t_list *a, t_list *b);
+void	get_user_input(t_list **a, t_list **b);
 /*
 * outputs
 */
-void	show_stacks(t_list *a, t_list *b);
+void	show_stacks(t_list **a, t_list **b);
 
 void	exit_error(void);
 
@@ -37,18 +37,18 @@ void	exit_success(t_list	*a);
 /*
 * operations
 */
-void	swap_top(t_list *stack);
+void	swap_top(t_list **stack);
 
-void	sa(t_list *a, t_list *b);
+void	sa(t_list **a, t_list **b);
 
-void	sb(t_list *a, t_list *b);
+void	sb(t_list **a, t_list **b);
 
-void	ss(t_list *a, t_list *b);
+void	ss(t_list **a, t_list **b);
 
-void	push_top(t_list *src, t_list *dst);
+void	push_top(t_list **src, t_list **dst);
 
-void	pa(t_list *a, t_list *b);
+void	pa(t_list **a, t_list **b);
 
-void	pb(t_list *a, t_list *b);
+void	pb(t_list **a, t_list **b);
 
 #endif

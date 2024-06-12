@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 17:19:50 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:12:56 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static void	show_options(char *buffer)
 	read(0, buffer, 1);
 }
 
-void	get_user_input(t_list *a, t_list *b)
+void	get_user_input(t_list **a, t_list **b)
 {
 	char	buffer;
 
