@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 19:02:29 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:34:58 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void	exit_success(t_list	*a);
 /*
 * operations
 */
+typedef void	(*t_operations)(t_list **, t_list **);
+
 void	swap_top(t_list **stack);
 
 void	sa(t_list **a, t_list **b);
