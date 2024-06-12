@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:49:51 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 14:00:02 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:06:42 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,10 @@ static void	recursive_show_stacks(t_list *a, t_list *b)
 
 void	show_stacks(t_list *a, t_list *b)
 {
+	ft_printf("\n");
 	recursive_show_stacks(a, b);
 	ft_printf("_ _\n");
-	ft_printf("a b\n");
+	ft_printf("a b\n\n");
 }
 
 void	exit_error(void)
