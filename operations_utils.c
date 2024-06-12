@@ -1,49 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   operations.c                                       :+:      :+:    :+:   */
+/*   operations_utils.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 15:32:59 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:07:34 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	sa(t_list *a, t_list *b)
+void	swap_top(t_list *stack)
 {
-	swap_top(a);
-	ft_printf("Operation done : sa\n");
-	show_stacks(a, b);
+	t_list	*new_last;
+	t_list	*new_before_last;
+
+	if (ft_lstsize(stack) < 2)
+		return ;
+	new_last = ft_lstlast_offset(stack, 1);
+	new_before_last = ft_lstlast(stack);
+	ft_lstlast_offset(stack, 2)->next = new_before_last;
+	new_before_last->next = new_last;
+	new_last->next = NULL;
 }
 
-void	sb(t_list *a, t_list *b)
+void	push_top(t_list *src, t_list *dst)
 {
-	swap_top(b);
-	ft_printf("Operation done : sb\n");
-	show_stacks(a, b);
-}
-
-void	ss(t_list *a, t_list *b)
-{
-	swap_top(a);
-	swap_top(b);
-	ft_printf("Operation done : ss\n");
-	show_stacks(a, b);
-}
-
-void	pa(t_list *a, t_list *b)
-{
-	push_top(b, a);
-	ft_printf("Operation done : pa\n");
-	show_stacks(a, b);
-}
-
-void	pb(t_list *a, t_list *b)
-{
-	push_top(a, b);
-	ft_printf("Operation done : pa\n");
-	show_stacks(a, b);
+	ft_lstadd_back(&dst, src);
 }
