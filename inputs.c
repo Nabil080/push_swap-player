@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:12:56 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:17:47 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ void	get_user_input(t_list **a, t_list **b)
 	char	buffer;
 
 	show_options(&buffer);
-	ft_printf("DEBUG BUFFER : %c\n", buffer);
 	if (buffer == '0')
 		return ;
 	if (buffer == '1')
