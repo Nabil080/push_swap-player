@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 16:12:48 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:19:50 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,18 +25,14 @@ static void	show_options(char *buffer)
 	read(0, buffer, 1);
 }
 
-int	get_user_input(t_list *a, t_list *b)
+void	get_user_input(t_list *a, t_list *b)
 {
 	char	buffer;
 
 	show_options(&buffer);
-	while (!ft_isdigit(buffer))
-	{
-		ft_printf("Merci de choisir une option valide\n\n");
-		show_options(&buffer);
-	}
+	ft_printf("DEBUG BUFFER : %c\n", buffer);
 	if (buffer == '0')
-		return (0);
+		return ;
 	if (buffer == '1')
 		show_stacks(a, b);
 	if (buffer == '2')
@@ -49,5 +45,5 @@ int	get_user_input(t_list *a, t_list *b)
 		pa(a, b);
 	if (buffer == '6')
 		pb(a, b);
-	return (1);
+	get_user_input(a, b);
 }

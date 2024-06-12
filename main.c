@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:19:49 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 14:57:25 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:16:37 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@ int	main(int argc, char *argv[])
 	if (!a)
 		exit_malloc();
 	b = NULL;
-	while (get_user_input(a, b))
-		ft_printf("--------------------------\n\n");
+	get_user_input(a, b);
 	exit_success(a);
 }

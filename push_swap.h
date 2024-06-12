@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 15:22:53 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 17:17:06 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_list	*parse_as_lst(size_t argc, char **argv);
 /*
 * inputs
 */
-int		get_user_input(t_list *a, t_list *b);
+void	get_user_input(t_list *a, t_list *b);
 /*
 * outputs
 */
