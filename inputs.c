@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 19:34:33 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 19:42:07 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,12 +31,8 @@ static void	show_options(char *buffer)
 	read(0, buffer, 1);
 }
 
-void	get_user_input(t_list **a, t_list **b)
+void	get_operations(t_operations *operations)
 {
-	char			buffer;
-	long			index;
-	t_operations	operations[12];
-
 	operations[0] = &show_stacks;
 	operations[1] = &sa;
 	operations[2] = &sb;
@@ -49,9 +45,18 @@ void	get_user_input(t_list **a, t_list **b)
 	operations[9] = &rra;
 	operations[10] = &rrb;
 	operations[11] = &rrr;
+}
+
+void	get_user_input(t_list **a, t_list **b)
+{
+	char			buffer;
+	long			index;
+	t_operations	operations[12];
+
 	show_options(&buffer);
 	if (buffer == 'q')
 		return ;
+	get_operations(operations);
 	index = ft_atoi(&buffer);
 	operations[index](a, b);
 	get_user_input(a, b);
