@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 14:58:17 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:17:01 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,14 @@ void	sa(t_list *a, t_list *b)
 
 void	sb(t_list *a, t_list *b)
 {
+	swap_top(b);
+	ft_printf("Operation done : sb\n");
+	show_stacks(a, b);
+}
+
+void	ss(t_list *a, t_list *b)
+{
+	swap_top(a);
 	swap_top(b);
 	ft_printf("Operation done : sb\n");
 	show_stacks(a, b);
