@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:49:51 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 14:45:17 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:02:02 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,16 @@
 
 static void	recursive_show_stacks(t_list *a, t_list *b)
 {
-	if (a && a->next)
-		if (b && b->next)
-			recursive_show_stacks(a->next, b->next);
-		else
-			recursive_show_stacks(a->next, b);
-	else if(b && b->next)
+	if ((a && a->next) && (b && b->next))
+		recursive_show_stacks(a->next, b->next);
+	else if (a && a->next)
+		recursive_show_stacks(a->next, b);
+	else if (b && b->next)
 		recursive_show_stacks(a, b->next);
-	if (a)
-		if (b)
-			ft_printf("%d %d\n", *(int *)a->content, *(int *)b->content);
-		else
-			ft_printf("%d x\n", *(int *)a->content);
+	if (a && b)
+		ft_printf("%d %d\n", *(int *)a->content, *(int *)b->content);
+	else if (a)
+		ft_printf("%d x\n", *(int *)a->content);
 	else if (b)
 		ft_printf("x %d\n", *(int *)b->content);
 }

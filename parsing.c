@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 14:00:04 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:03:00 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static int	ft_atoi_check(const char *str)
 		if (result > INT_MAX && str[0] != '-')
 			return (0);
 		if (result > (long)INT_MAX + 1 && str[0] == '-')
-			return (0);	
+			return (0);
 		i++;
 	}
 	return (1);
@@ -39,7 +39,7 @@ void	args_check(size_t argc, char **argv)
 {
 	size_t	i;
 	size_t	j;
-	
+
 	if (argc < 2)
 		exit(EXIT_FAILURE);
 	i = 1;
