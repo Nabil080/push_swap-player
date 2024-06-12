@@ -6,6 +6,7 @@ SRCS =	main.c \
 		inputs.c \
 		outputs.c \
 		operations.c \
+		operations_2.c \
 		operations_utils.c \
 
 HEADER = push_swap.h

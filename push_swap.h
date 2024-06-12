@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:15:46 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 18:45:45 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,5 +50,13 @@ void	push_top(t_list **src, t_list **dst);
 void	pa(t_list **a, t_list **b);
 
 void	pb(t_list **a, t_list **b);
+
+void	rotate(t_list **stack);
+
+void	ra(t_list **a, t_list **b);
+
+void	rb(t_list **a, t_list **b);
+
+void	rr(t_list **a, t_list **b);
 
 #endif
