@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 13:52:12 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 14:00:04 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,28 +35,27 @@ static int	ft_atoi_check(const char *str)
 	return (1);
 }
 
-int	args_check(size_t argc, char **argv)
+void	args_check(size_t argc, char **argv)
 {
 	size_t	i;
 	size_t	j;
 	
 	if (argc < 2)
-		return (0);
+		exit(EXIT_FAILURE);
 	i = 1;
 	while (i < argc)
 	{
 		if (!ft_atoi_check(argv[i]))
-			return (ft_printf("Error\n") - 6);
+			exit_error();
 		j = 1;
 		while (i + j < argc)
 		{
 			if (ft_atoi(argv[i]) == ft_atoi(argv[i + j]))
-				return (ft_printf("Error\n") - 6);
+				exit_error();
 			j++;
 		}
 		i++;
 	}
-	return (1);
 }
 
 t_list	*parse_as_lst(size_t argc, char **argv)
