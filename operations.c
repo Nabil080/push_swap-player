@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 15:32:59 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:58:36 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,8 @@ void	pa(t_list *a, t_list *b)
 {
 	push_top(b, a);
 	ft_printf("Operation done : pa\n");
-	show_stacks(a, b);
+	show_stacks(a, b);	ft_printf("")
+
 }
 
 void	pb(t_list *a, t_list *b)

@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 14:45:28 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 15:22:53 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,8 +37,18 @@ void	exit_success(t_list	*a);
 /*
 * operations
 */
+void	swap_top(t_list *stack);
+
 void	sa(t_list *a, t_list *b);
 
 void	sb(t_list *a, t_list *b);
+
+void	ss(t_list *a, t_list *b);
+
+void	push_top(t_list *src, t_list *dst);
+
+void	pa(t_list *a, t_list *b);
+
+void	pb(t_list *a, t_list *b);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 16:07:34 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:14:06 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	swap_top(t_list *stack)
 
 void	push_top(t_list *src, t_list *dst)
 {
-	ft_lstadd_back(&dst, src);
+	ft_lstadd_back(&dst, ft_lstlast(src));
+	ft_lstlast_offset(src, 1)->next = NULL;
 }

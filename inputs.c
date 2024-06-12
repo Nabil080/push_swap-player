@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 15:19:42 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 16:12:48 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ static void	show_options(char *buffer)
 	ft_printf("2 : sa (swap a)\n");
 	ft_printf("3 : sb (swap b)\n");
 	ft_printf("4 : ss (swap a & b)\n");
+	ft_printf("5 : pa (push a)\n");
+	ft_printf("6 : pb (push b)\n");
 	read(0, buffer, 1);
 }
 
@@ -43,5 +45,9 @@ int	get_user_input(t_list *a, t_list *b)
 		sb(a, b);
 	if (buffer == '4')
 		ss(a, b);
+	if (buffer == '5')
+		pa(a, b);
+	if (buffer == '6')
+		pb(a, b);
 	return (1);
 }
