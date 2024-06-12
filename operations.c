@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   operations.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 13:53:06 by nbellila         ###   ########.fr       */
+/*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/12 13:53:12 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "libft.h"
+static void	swap_top(t_list *stack)
+{
+	if (ft_lstsize(stack) < 2)
+		return ;
+}
 
-/*
-* parsing	
-*/
-int		args_check(size_t argc, char **argv);
-t_list	*parse_as_lst(size_t argc, char **argv);
-/*
-* outputs
-*/
-void	show_stacks(t_list *a, t_list *b);
-/*
-* operations
-*/
-void	sa(t_list *a);
+void	sa(t_list *a)
+{
+	swap_top(a);
+}
 
-void	sb(t_list *b);
-
-#endif
+void	sb(t_list *b)
+{
+	swap_top(b);
+}

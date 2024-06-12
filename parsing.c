@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:27:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 13:25:25 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/12 13:52:12 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,6 @@ int	args_check(size_t argc, char **argv)
 		}
 		i++;
 	}
-	// creer une liste avec chaque int
 	return (1);
 }
 

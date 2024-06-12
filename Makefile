@@ -3,6 +3,8 @@ NAME = push_swap
 
 SRCS =	main.c \
 		parsing.c \
+		outputs.c \
+		operations.c \
 
 HEADER = push_swap.h
 
