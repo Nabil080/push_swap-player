@@ -10,7 +10,9 @@ SRCS_NAMES =	main.c \
 
 SRCS = ${addprefix srcs/, ${SRCS_NAMES}}
 
-OBJS = ${addprefix objs/, ${SRCS_NAMES:.c=.o}}
+OBJS_DIR = objs
+
+OBJS = ${addprefix ${OBJS_DIR}/, ${SRCS_NAMES:.c=.o}}
 
 HEADER = push_swap.h
 
@@ -20,16 +22,19 @@ LIBFT = libft
 
 all : ${NAME}
 
-${NAME} : ${SRCS:.c=.o}
+${NAME} : ${OBJS_DIR} ${OBJS}
 	make -C ${LIBFT}
-	cc $^ ${LIBFT}/libft.a -o $@
+	cc ${OBJS} ${LIBFT}/libft.a -o $@
 
-%.o : %.c
+${OBJS_DIR} :
+	mkdir $@
+
+${OBJS_DIR}/%.o : srcs/%.c
 	cc ${FLAGS} -I ${LIBFT} -c $< -o $@
 
 clean :
 	make clean -C ${LIBFT}
-	rm -rf ${SRCS:.c=.o}
+	rm -rf ${OBJS_DIR}
 
 fclean : clean
 	make fclean -C ${LIBFT}
