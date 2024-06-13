@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:49:51 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 18:21:40 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:46:52 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,9 +48,10 @@ void	exit_malloc(void)
 	exit(EXIT_FAILURE);
 }
 
-void	exit_success(t_list	*a)
+void	exit_success(t_list	*a, t_list	*b)
 {
 	ft_lstclear(&a, free);
+	ft_lstclear(&b, free);
 	ft_printf("Program successfully executed, everything freed\n");
 	exit(EXIT_SUCCESS);
 }

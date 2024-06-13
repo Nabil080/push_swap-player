@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 17:17:03 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 19:34:58 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:47:15 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	exit_error(void);
 
 void	exit_malloc(void);
 
-void	exit_success(t_list	*a);
+void	exit_success(t_list	*a, t_list	*b);
 /*
 * operations
 */
