@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/13 13:45:50 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:32:47 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	show_options(char *buffer)
 	read(0, buffer, 2);
 }
 
-void	get_operations(t_operations *operations)
+static void	get_operations(t_operations *operations)
 {
 	operations[0] = &show_stacks;
 	operations[1] = &sa;
@@ -47,13 +47,36 @@ void	get_operations(t_operations *operations)
 	operations[11] = &rrr;
 }
 
+static int	is_sorted(t_list **a, t_list **b)
+{
+	t_list	*tested;
+	t_list	*itered;
+
+	if (ft_lstsize(*b) > 0)
+		return (0);
+	tested = *a;
+	while (tested->next)
+	{
+		itered = tested->next;
+		while (itered)
+		{
+			if (*(int *)tested->content < *(int *)itered->content)
+				return (0);
+			itered = itered->next;
+		}
+		tested = tested->next;
+	}
+	ft_printf("The list is sorted !\n");
+	return (1);
+}
 void	get_user_input(t_list **a, t_list **b)
 {
 	char			buffer[2];
 	long			index;
 	t_operations	operations[12];
 
-	*buffer = 0;
+	if (is_sorted(a, b))
+		return ;
 	show_options(buffer);
 	if (*buffer == 'q')
 		return ;
