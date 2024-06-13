@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/13 14:32:47 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:42:08 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ static int	is_sorted(t_list **a, t_list **b)
 void	get_user_input(t_list **a, t_list **b)
 {
 	char			buffer[2];
-	long			index;
+	size_t			index;
 	t_operations	operations[12];
 
 	if (is_sorted(a, b))
@@ -82,6 +82,7 @@ void	get_user_input(t_list **a, t_list **b)
 		return ;
 	get_operations(operations);
 	index = ft_atoi(buffer);
-	operations[index](a, b);
+	if (index < 12)
+		operations[index](a, b);
 	get_user_input(a, b);
 }
