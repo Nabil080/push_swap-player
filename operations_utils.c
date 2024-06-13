@@ -6,12 +6,13 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 19:34:13 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:42:22 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//TODO : fix le swap a size == 2
 void	swap_top(t_list **stack)
 {
 	t_list	*new_last;

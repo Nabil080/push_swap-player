@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 14:20:21 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 19:42:07 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 13:45:50 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ static void	show_options(char *buffer)
 	ft_printf("10 : rrb (reverse rotate b)\n");
 	ft_printf("11 : rrr (reverse rotate a & b)\n");
 	ft_printf("q : Terminer le programme\n");
-	read(0, buffer, 1);
+	read(0, buffer, 2);
 }
 
 void	get_operations(t_operations *operations)
@@ -49,15 +49,16 @@ void	get_operations(t_operations *operations)
 
 void	get_user_input(t_list **a, t_list **b)
 {
-	char			buffer;
+	char			buffer[2];
 	long			index;
 	t_operations	operations[12];
 
-	show_options(&buffer);
-	if (buffer == 'q')
+	*buffer = 0;
+	show_options(buffer);
+	if (*buffer == 'q')
 		return ;
 	get_operations(operations);
-	index = ft_atoi(&buffer);
+	index = ft_atoi(buffer);
 	operations[index](a, b);
 	get_user_input(a, b);
 }
