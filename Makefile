@@ -1,16 +1,16 @@
 NAME = push_swap
 
-SRCS_NAMES =	main \
-				parsing \
-				inputs \
-				outputs \
-				operations \
-				operations_2 \
-				operations_utils \
+SRCS_NAMES =	main.c \
+				parsing.c \
+				inputs.c \
+				outputs.c \
+				operations.c \
+				operations_2.c \
+				operations_utils.c \
 
-SRCS = ${addprefix srcs/, ${addsuffix .c, ${SRCS_NAMES}}}
+SRCS = ${addprefix srcs/, ${SRCS_NAMES}}
 
-OBJS = ${addprefix objs/, ${addsuffix .o, ${SRCS_NAMES}}}
+OBJS = ${addprefix objs/, ${SRCS_NAMES:.c=.o}}
 
 HEADER = push_swap.h
 
@@ -20,11 +20,11 @@ LIBFT = libft
 
 all : ${NAME}
 
-${NAME} : ${OBJS}
+${NAME} : ${SRCS:.c=.o}
 	make -C ${LIBFT}
 	cc $^ ${LIBFT}/libft.a -o $@
 
-${OBJS}:
+%.o : %.c
 	cc ${FLAGS} -I ${LIBFT} -c $< -o $@
 
 clean :
