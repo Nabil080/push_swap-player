@@ -6,25 +6,29 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/12 13:31:04 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/13 13:42:22 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:17:22 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 //TODO : fix le swap a size == 2
+//1->2->NULL
+//2->1->NULL
+
 void	swap_top(t_list **stack)
 {
-	t_list	*new_last;
-	t_list	*new_before_last;
+	t_list	*last; // 2
+	t_list	*before_last; // 1
+	void	*tmp;
 
 	if (ft_lstsize(*stack) < 2)
 		return ;
-	new_last = ft_lstlast_offset(*stack, 1);
-	new_before_last = ft_lstlast(*stack);
-	ft_lstlast_offset(*stack, 2)->next = new_before_last;
-	new_before_last->next = new_last;
-	new_last->next = NULL;
+	last = ft_lstlast(*stack); // 2
+	before_last = ft_lstlast_offset(*stack, 1); // 1
+	tmp = last->content;
+	last->content = before_last->content;
+	before_last->content = tmp;
 }
 
 void	push_top(t_list **src, t_list **dst)

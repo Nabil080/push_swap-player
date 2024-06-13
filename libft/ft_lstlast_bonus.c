@@ -6,7 +6,7 @@
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/05/20 14:04:13 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/12 15:48:53 by nbellila         ###   ########.fr       */
+/*   Updated: 2024/06/13 14:09:46 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ t_list	*ft_lstlast_offset(t_list *lst, size_t offset)
 	if (!lst)
 		return (NULL);
 	size = ft_lstsize(lst);
+	if (size <= offset)
+		return (lst);
 	i = 1;
 	while (i < size - offset)
 	{
