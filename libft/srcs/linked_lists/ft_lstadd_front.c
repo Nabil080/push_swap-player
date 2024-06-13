@@ -1,33 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isalpha.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd_front.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 11:50:33 by nbellila          #+#    #+#             */
-/*   Updated: 2024/06/11 13:34:23 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/20 14:04:20 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/13 17:41:19 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalpha(int c)
+void	ft_lstadd_front(t_list **lst, t_list *new)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z'));
+	if (!new)
+		return ;
+	if (*lst)
+		new->next = *lst;
+	*lst = new;
 }
-
-int	ft_isspace(int c)
-{
-	return (c == ' ' || (c >= '\t' && c <= '\r'));
-}
-/*
-int main(int argc, char const *argv[])
-{
-	if (argc != 2)
-		return (1);
-	printf("isalpha : %i\n", isalpha(*argv[1]));
-	printf("ft_isalpha : %i\n", ft_isalpha(*argv[1]));
-	return (0);
-}
-*/

@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_isprint.c                                       :+:      :+:    :+:   */
+/*   ft_countchar.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/16 11:50:33 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/21 13:48:52 by nbellila         ###   ########.fr       */
+/*   Created: 2024/06/13 17:46:45 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/13 17:46:54 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int c)
+size_t	ft_countchar(char const *s, char const c)
 {
-	return ((c >= ' ' && c <= '~'));
-}
+	size_t	count;
+	size_t	i;
 
-/*
-int main(int argc, char const *argv[])
-{
-	if (argc != 2)
-		return (1);
-	printf("isprint : %i\n", isprint(*argv[1]));
-	printf("ft_isprint : %i\n", ft_isprint(*argv[1]));
-	return (0);
+	count = 0;
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			count++;
+		i++;
+	}
+	return (count);
 }
-*/

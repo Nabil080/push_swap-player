@@ -1,53 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nbellila <nbellila@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/05/20 14:11:41 by nbellila          #+#    #+#             */
-/*   Updated: 2024/05/21 14:10:35 by nbellila         ###   ########.fr       */
+/*   Created: 2024/05/20 18:56:50 by nbellila          #+#    #+#             */
+/*   Updated: 2024/06/13 17:40:57 by nbellila         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	int	count;
+	t_list	*map;
+	t_list	*new_content;
+	t_list	*new_node;
 
-	count = 0;
-	while (lst)
+	map = NULL;
+	while (lst && f && del)
 	{
+		new_content = f(lst->content);
+		if (!new_content)
+		{
+			ft_lstclear(&map, del);
+			return (NULL);
+		}
+		new_node = ft_lstnew(new_content);
+		if (!new_node)
+		{
+			del(new_content);
+			ft_lstclear(&map, del);
+			return (NULL);
+		}
+		ft_lstadd_back(&map, new_node);
 		lst = lst->next;
-		count++;
 	}
-	return (count);
+	return (map);
 }
-/*
-int	*ft_intdup(int n)
-{
-	int	*dup;
-
-	dup = malloc(sizeof(int));
-	*dup = n;
-	return (dup);
-}
-
-int	main(void)
-{
-	size_t	i;
-	t_list	*lst;
-
-	i = 0;
-	lst = NULL;
-	while (i < 10)
-	{
-		ft_lstadd_back(&lst, ft_lstnew(ft_intdup(i)));
-		i++;
-	}
-	printf("lstsize : %i\n", ft_lstsize(lst));
-	ft_lstclear(&lst, free);
-	return (0);
-}
-*/

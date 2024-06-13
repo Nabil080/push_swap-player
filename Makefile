@@ -30,7 +30,7 @@ ${OBJS_DIR} :
 	mkdir $@
 
 ${OBJS_DIR}/%.o : srcs/%.c
-	cc ${FLAGS} -I ${LIBFT} -c $< -o $@
+	cc ${FLAGS} -I . -I ${LIBFT} -c $< -o $@
 
 clean :
 	make clean -C ${LIBFT}
